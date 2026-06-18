@@ -1,0 +1,17 @@
+[
+    {"id": 1, "nombre": "Bulbasaur", "tipo": "Planta", "cp": 318},
+    {"id": 2, "nombre": "Charmander", "tipo": "Fuego", "cp": 309},
+    {"id": 3, "nombre": "Squirtle", "tipo": "Agua", "cp": 314},
+    {"id": 4, "nombre": "Pikachu", "tipo": "Eléctrico", "cp": 320},
+    {"id": 5, "nombre": "Jigglypuff", "tipo": "Hada", "cp": 270},
+    {"id": 6, "nombre": "Meowth", "tipo": "Normal", "cp": 290},
+    {"id": 7, "nombre": "Psyduck", "tipo": "Agua", "cp": 320},
+    {"id": 8, "nombre": "Abra", "tipo": "Psíquico", "cp": 310},
+    {"id": 9, "nombre": "Machop", "tipo": "Lucha", "cp": 305},
+    {"id": 10, "nombre": "Geodude", "tipo": "Roca", "cp": 300},
+    {"id": 11, "nombre": "Gastly", "tipo": "Fantasma", "cp": 310},
+    {"id": 12, "nombre": "Onix", "tipo": "Roca", "cp": 385},
+    {"id": 13, "nombre": "Eevee", "tipo": "Normal", "cp": 325},
+    {"id": 14, "nombre": "Snorlax", "tipo": "Normal", "cp": 540},
+    {"id": 15, "nombre": "Dragonite", "tipo": "Dragón", "cp": 600}
+]
