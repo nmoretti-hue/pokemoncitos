@@ -1,7 +1,8 @@
 import json
+from sanarequipo import sanar_equipo
+from desafioaliderdegimnasio import elegir_gimnasio, medallas_entrenador
 from hashmap import HashMap
 from hashset import HashSet
-
 
 class pokemoncito:
     def __init__(self,id,nombre,tipo,pc):
@@ -39,7 +40,7 @@ def agregar_medalla(medallas_entrenador,nombre_medalla):
         print(f"La '{nombre_medalla}' ya está en el registro.")
     else:
         medallas_entrenador.add(nombre_medalla)
-        print(f"Se agregó la '{nombre_medalla}' correctamente.")
+        print(f"Se agrego la '{nombre_medalla}' correctamente.")
 
 
     print()
@@ -62,7 +63,7 @@ def agregar_al_equipo(pokemon):
         print(f"{pokemon.nombre} se agregó al equipo principal.")
     else:
         Pc.append(pokemon)
-        print(f"El equipo ya tiene 6 Pokémon. {pokemon.nombre} fue enviado a la PC automáticamente.")
+        print(f"El equipo ya tiene 6 Pokemon. {pokemon.nombre} fue enviado a la PC automaticamente.")
 
 def mostrar_equipo():
     print("Equipo principal actual:")
@@ -70,7 +71,7 @@ def mostrar_equipo():
         print(f"- {p.nombre} (Tipo: {p.tipo}, CP: {p.pc})")
 
 def mostrar_pc():
-    print("Pokémon en la PC:")
+    print("Pokemon en la PC:")
     for p in Pc:
         print(f"- {p.nombre} (Tipo: {p.tipo}, CP: {p.pc})")
 def cargar_pokemones_desde_json(datos):
@@ -88,4 +89,19 @@ cargar_pokemones_desde_json(datos)
 "///////////////////////////////////////////////////////////////"
 
 
+sanar_equipo(equipo_principal)
+
+
+"///////////////////////////////////////////////////////////////"
+
+def pruebasinmenu():
+    for intento in range(3):
+        print(f" INTENTO {intento + 1}")
+        elegir_gimnasio()
+
+    print(" MEDALLAS FINALES ")
+    medallas_entrenador.mostrar()
+pruebasinmenu()
+
+"///////////////////////////////////////////////////////////////"
 
