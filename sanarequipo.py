@@ -13,6 +13,7 @@ def sanar_equipo(equipo_principal):
         pokemon_actual = cola_centro.dequeue()
         print(f"Curando a {pokemon_actual.nombre}")
         time.sleep(1)
+        pokemon_actual.vida = 100
         print(f"{pokemon_actual.nombre} está totalmente curado.")
 
     print("Todo el equipo fue curado con exito.")

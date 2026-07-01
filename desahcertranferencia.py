@@ -1,4 +1,5 @@
 from extras.stack import Stack
+from sistemadealmacenamientoPC import pc_lista, mostrar_pc
 
 stack_transferencias = Stack()
 
@@ -21,4 +22,34 @@ def deshacer_transferencia():
 
 def mostrar_transferencias():
     print("Ultimos Pokemon transferidos al Profesor Oak:")
-    stack_transferencias.mostrar()
+    for pokemon in stack_transferencias.items:
+        print(f"- {pokemon.nombre} (Tipo: {pokemon.tipo}, CP: {pokemon.pc})")
+
+def transferir_pokemon_de_pc():
+    mostrar_pc()
+
+    if pc_lista.is_empty():
+        print("No hay Pokemon en la PC para transferir.")
+        return
+
+    nombre = input("Nombre del Pokemon a transferir al Profesor Oak: ")
+
+    current = pc_lista.head
+    while current is not None:
+        if current.data.nombre.lower() == nombre.lower():
+            if current.prev is not None:
+                current.prev.next = current.next
+            else:
+                pc_lista.head = current.next
+
+            if current.next is not None:
+                current.next.prev = current.prev
+            else:
+                pc_lista.tail = current.prev
+
+            transferir_a_oak(current.data)
+            return
+
+        current = current.next
+
+    print(f"{nombre} no esta en la PC.")

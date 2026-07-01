@@ -12,7 +12,7 @@ def obtener_lista_de_pc():
 def mostrar_lista(lista, atributo):
     print(f"\nPokémon ordenados por {atributo}:")
     for tupla in lista:
-        p = tupla[1]
+        p = tupla[-1]
         print(f"- {p.nombre} (Tipo: {p.tipo}, CP: {p.pc})")
 
 def ordenar_por_nombre():
@@ -21,7 +21,7 @@ def ordenar_por_nombre():
         print("La PC está vacía.")
         return
 
-    tuplas = [(p.nombre, p) for p in lista]
+    tuplas = [(p.nombre, id(p), p) for p in lista]
     tuplas = bubble_sort(tuplas)
 
     mostrar_lista(tuplas, "nombre (A-Z)")
@@ -32,7 +32,7 @@ def ordenar_por_tipo():
         print("La PC está vacía.")
         return
     
-    tuplas = [(p.tipo, p) for p in lista]
+    tuplas = [(p.tipo, id(p), p) for p in lista]
     tuplas = selection_sort(tuplas)
 
     mostrar_lista(tuplas, "tipo")
@@ -43,7 +43,7 @@ def ordenar_por_cp():
         print("La PC está vacía.")
         return
 
-    tuplas = [(-p.pc, p) for p in lista]
+    tuplas = [(-p.pc, id(p), p) for p in lista]
     quick_sort(tuplas)
 
     mostrar_lista(tuplas, "CP (mayor a menor)")

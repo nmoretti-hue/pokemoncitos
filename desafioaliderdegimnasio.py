@@ -1,6 +1,7 @@
 import json
 import random
 from hashtable.hashset import HashSet
+from pokemoncito import equipo_principal
 
 def cargar_gimnasios():
     with open("jansooon/medallas.json", "r", encoding="utf-8") as archivo:
@@ -23,6 +24,15 @@ def precargar_medallas():
     medallas_entrenador.agregar(nombres_medallas[1])
 
 def elegir_gimnasio():
+    equipo_debilitado = True
+    for pokemon in equipo_principal:
+        if pokemon.vida > 0:
+            equipo_debilitado = False
+
+    if equipo_debilitado:
+        print("Tu equipo está debilitado. Andá al Centro Pokémon antes de pelear.")
+        return
+    
     print("Elegí un gimnasio para desafiar:")
     for i, gym in enumerate(gimnasios):
         print(f"{i + 1}. Líder {gym['lider']} ({gym['medalla']})")
@@ -45,4 +55,6 @@ def pelear_contra_lider(gimnasio):
         medallas_entrenador.agregar(gimnasio["medalla"])
     else:
         print(f"Perdiste contra {gimnasio['lider']}. No conseguis la medalla.")
-
+        for pokemon in equipo_principal:
+            pokemon.vida = 0
+        print("Tu equipo quedó debilitado. Andá al Centro Pokémon a curarlos.")

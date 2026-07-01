@@ -7,6 +7,7 @@ class pokemoncito:
             self.nombre = nombre
             self.tipo = tipo
             self.pc = pc
+            self.vida = 100
 
 def guardarpokemonesenlasbuckets():
     minipokedex = HashMap()
@@ -24,8 +25,7 @@ def agregar_al_equipo(pokemon):
     if len(equipo_principal) < 6:
             equipo_principal.append(pokemon)
             print(f"{pokemon.nombre} se agregó al equipo principal.")
+            return True
     else:
-            Pc.append(pokemon)
-            print(f"El equipo ya tiene 6 Pokemon. {pokemon.nombre} fue enviado a la PC automaticamente.")
-
+        return False
 
