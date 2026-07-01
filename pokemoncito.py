@@ -15,8 +15,9 @@ def guardarpokemonesenlasbuckets():
         datos = json.load(archivo)
         for pokemoncito in datos:
             minipokedex.agregar(pokemoncito["id"], pokemoncito)
-        minipokedex.mostrar()
-    return datos
+    return minipokedex
+
+pokedex_hashmap = guardarpokemonesenlasbuckets()
 
 equipo_principal = []
 Pc = []

@@ -30,14 +30,3 @@ def cargar_pokemones_desde_json():
         entro_al_equipo = agregar_al_equipo(nuevo_pokemon)
         if not entro_al_equipo:
             guardar_en_pc(nuevo_pokemon)
-
-def cargar_pokemones_desdejson(datos):
-    for dato in datos:
-        nuevo_pokemon = pokemoncito(dato["id"], dato["nombre"], dato["tipo"], dato["cp"])
-        agregar_al_equipo(nuevo_pokemon)
-
-    mostrar_equipo()
-    mostrar_pc()
-
-    datos = guardarpokemonesenlasbuckets()
-    cargar_pokemones_desdejson(datos)

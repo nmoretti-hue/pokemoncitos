@@ -2,8 +2,9 @@
 import sys
 import time
 sys.path.append("extras")
+from Búsquedas import menu_busquedas
 from sistemadealmacenamientoPC import cargar_pokemones_desde_json,mostrar_equipo,mostrar_pc
-from pokemoncito import equipo_principal
+from pokemoncito import equipo_principal,pokedex_hashmap
 from desafioaliderdegimnasio import elegir_gimnasio, medallas_entrenador, precargar_medallas
 from sanarequipo import sanar_equipo
 from desahcertranferencia import transferir_a_oak, deshacer_transferencia, mostrar_transferencias, transferir_pokemon_de_pc
@@ -32,7 +33,9 @@ while True:
     print("6. Ordenar PC")
     print("7. Transferencias (Profesor Oak)")
     print("8. Ir al Centro Pokémon")
-    print("9. Salir")
+    print("9. Ver Pokedex")
+    print("10. Buscar Pokémon")
+    print("11. Salir")
 
     opcion = input("Seleccione una opción: ")
 
@@ -85,11 +88,18 @@ while True:
         time.sleep(1)
         sanar_equipo(equipo_principal)
         time.sleep(1)
-
     elif opcion == "9":
         time.sleep(1)
+        pokedex_hashmap.mostrar()
+        time.sleep(1)
+    elif opcion == "10":
+        time.sleep(1)
+        menu_busquedas()
+        time.sleep(1)
+    elif opcion == "11":
         print("Saliendo del sistema...")
         time.sleep(1)
         break
     else:
-        print("Opción inválida, probá de nuevo.")   
+        print("Opción inválida, probá de nuevo.")
+  

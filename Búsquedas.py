@@ -29,29 +29,44 @@ def buscar_por_id(pokedex, ids_ordenados, id_buscado):
     return None
 
 
+def buscar_pokemon_en_equipo():
+    nombre = input("Ingresa el nombre del Pokemon a buscar en el equipo: ")
+    resultado_equipo = buscar_en_equipo(nombre)
 
-nombre = input("Ingresa el nombre del Pokemon a buscar en el equipo: ")
-resultado_equipo = buscar_en_equipo(nombre)
+    if resultado_equipo != None:
+        print(f"{resultado_equipo.nombre} esta en el equipo (Tipo: {resultado_equipo.tipo}, CP: {resultado_equipo.pc})")
+    else:
+        print(f"{nombre} no esta en el equipo.")
 
-if resultado_equipo != None:
-    print(f"{resultado_equipo.nombre} esta en el equipo (Tipo: {resultado_equipo.tipo}, CP: {resultado_equipo.pc})")
-else:
-    print(f"{nombre} no esta en el equipo.")
+def buscar_pokemon_por_id():
+    with open("jansooon/minipokedex.json", "r") as archivo:
+        pokedex = json.load(archivo)
 
+    ids = [pokemon["id"] for pokemon in pokedex]
+    ids = bubble_sort(ids)
 
-with open("minipokedex.json", "r") as archivo:
-    pokedex = json.load(archivo)
+    id_buscado = int(input("Ingresá el ID del Pokémon a buscar: "))
+    resultado_pokedex = buscar_por_id(pokedex, ids, id_buscado)
 
-ids = []
-for pokemon in pokedex:
-    ids.append(pokemon["id"])
+    if resultado_pokedex != None:
+        print(f"ID {id_buscado} encontrado: {resultado_pokedex['nombre']} (Tipo: {resultado_pokedex['tipo']}, CP: {resultado_pokedex['cp']})")
+    else:
+        print(f"No existe ningún Pokemon con el ID {id_buscado}.")
 
-ids = bubble_sort(ids)
+def menu_busquedas():
+    while True:
+        print("BÚSQUEDAS")
+        print("1. Buscar Pokémon en el equipo (por nombre)")
+        print("2. Buscar Pokémon en la Pokédex (por ID)")
+        print("3. Volver")
 
-id_buscado = int(input("Ingresá el ID del Pokémon a buscar: "))
-resultado_pokedex = buscar_por_id(pokedex, ids, id_buscado)
+        opcion = input("Elegí una opción: ")
 
-if resultado_pokedex != None:
-    print(f"ID {id_buscado} encontrado: {resultado_pokedex['nombre']} (Tipo: {resultado_pokedex['tipo']}, CP: {resultado_pokedex['cp']})")
-else:
-    print(f"No existe ningún Pokemon con el ID {id_buscado}.")
+        if opcion == "1":
+            buscar_pokemon_en_equipo()
+        elif opcion == "2":
+            buscar_pokemon_por_id()
+        elif opcion == "3":
+            break
+        else:
+            print("Opción inválida.")

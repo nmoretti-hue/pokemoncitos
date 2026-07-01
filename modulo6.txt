@@ -1,0 +1,23 @@
+Punto 1
+Los dos son rapidos.
+Es como si tuvieras una fila de gente: 
+agregar a alguien al final de la fila no te hace revisar a nadie mas, 
+directamente se para atrás de todo. 
+Eso es lo que pasa con el equipo_principal.append(pokemon) 
+y con link_nodes() en la PC. Ninguno de los dos tiene que "buscar" nada antes,
+por eso los dos son O(1).
+
+Punto 2
+Por que la Pokedex usa Hash Map y no una lista comun
+Profe imaginate que estas buscando un libro en tu casa.
+Si los tenes todos amontonados en una pila (como una lista normal), tenes que ir mirando uno por uno hasta encontrar el que buscas.
+Eso es lento si tenes muchos libros.
+Ahora imaginate que en vez de eso tenes una biblioteca con estantes numerados, y sabes que "el libro con tal codigo va siempre en el estante 5". 
+Vas directo al estante 5 y listo.
+Eso es el Hash Map: agarra el id del Pokemon y calcula matematicamente en que bucket va. Por eso buscar ahi es mucho mas rapido que revisar pokemon por pokemon en una lista.
+
+Punto 3
+
+para 6000 mil pokemones, Quick Sort escala mejor (n log n) que un bubble sort (n²),
+ya que el bubble sort tendria que hacer 6000 x 6000 operaciones que serian 36.000.000,
+aunque comparte el mismo peor caso teorico.

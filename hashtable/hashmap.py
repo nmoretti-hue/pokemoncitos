@@ -16,7 +16,6 @@ class HashMap:
                 return
 
         bucket.append((key, value))
-        print(f"Key {key} agregada con {value}.")
 
     def buscar(self, key):
         indice = self.hash(key)

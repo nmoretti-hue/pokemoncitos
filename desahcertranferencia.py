@@ -1,5 +1,5 @@
 from extras.stack import Stack
-from sistemadealmacenamientoPC import pc_lista, mostrar_pc
+from sistemadealmacenamientoPC import pc_lista, mostrar_pc, guardar_en_pc
 
 stack_transferencias = Stack()
 
@@ -17,6 +17,7 @@ def deshacer_transferencia():
         return None
 
     pokemon_recuperado = stack_transferencias.pop()
+    guardar_en_pc(pokemon_recuperado)
     print(f"Se deshizo la transferencia de {pokemon_recuperado.nombre}. Vuelve a la PC.")
     return pokemon_recuperado
 
