@@ -1,6 +1,6 @@
 import json
 import random
-from hashset import HashSet
+from hashtable.hashset import HashSet
 
 def cargar_gimnasios():
     with open("medallas.json", "r", encoding="utf-8") as archivo:

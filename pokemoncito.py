@@ -1,8 +1,8 @@
 import json
 from sanarequipo import sanar_equipo
 from desafioaliderdegimnasio import elegir_gimnasio, medallas_entrenador
-from hashmap import HashMap
-from hashset import HashSet
+from hashtable.hashmap import HashMap
+from hashtable.hashset import HashSet
 
 class pokemoncito:
     def __init__(self,id,nombre,tipo,pc):
