@@ -17,12 +17,6 @@ print("Cargando Pokédex Nacional (15 registros)... OK.")
 print("Validando registros de medallas... OK.")
 precargar_medallas()
 
-
-print("   SISTEMA DE GESTIÓN: POKÉMON HUERGO   ")
-print("Inicializando motor de base de datos... OK.")
-print("Cargando Pokédex Nacional (15 registros)... OK.")
-print("Validando registros de medallas... OK.")
-
 while True:
     print("MENÚ PRINCIPAL")
     print("1. Ver Equipo Principal")
