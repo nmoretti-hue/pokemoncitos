@@ -1,4 +1,4 @@
-from stack import Stack
+from extras.stack import Stack
 
 stack_transferencias = Stack()
 

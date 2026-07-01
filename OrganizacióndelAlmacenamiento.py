@@ -1,4 +1,4 @@
-from sorts import bubble_sort, selection_sort, quick_sort
+from extras.sorts import bubble_sort, selection_sort, quick_sort
 from sistemadealmacenamientoPC import pc_lista
 
 def obtener_lista_de_pc():

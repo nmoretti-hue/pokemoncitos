@@ -3,7 +3,7 @@ import random
 from hashtable.hashset import HashSet
 
 def cargar_gimnasios():
-    with open("medallas.json", "r", encoding="utf-8") as archivo:
+    with open("jansooon/medallas.json", "r", encoding="utf-8") as archivo:
         medallas_json = json.load(archivo)
 
     nombres_medallas = [m["nombre"] for m in medallas_json]
@@ -14,9 +14,13 @@ def cargar_gimnasios():
     for i in range(len(lideres)):
         gimnasios.append({"lider": lideres[i], "medalla": nombres_medallas[i]})
 
-    return gimnasios
-gimnasios = cargar_gimnasios()
+    return gimnasios,nombres_medallas
+gimnasios, nombres_medallas = cargar_gimnasios()
 medallas_entrenador = HashSet()
+
+def precargar_medallas():
+    medallas_entrenador.agregar(nombres_medallas[0])
+    medallas_entrenador.agregar(nombres_medallas[1])
 
 def elegir_gimnasio():
     print("Elegí un gimnasio para desafiar:")
@@ -42,4 +46,3 @@ def pelear_contra_lider(gimnasio):
     else:
         print(f"Perdiste contra {gimnasio['lider']}. No conseguis la medalla.")
 
-elegir_gimnasio()

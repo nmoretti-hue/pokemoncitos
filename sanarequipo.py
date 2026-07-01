@@ -1,5 +1,5 @@
 import time
-from Queue import Queue
+from extras.Queue import Queue
 
 def sanar_equipo(equipo_principal):
     cola_centro = Queue()

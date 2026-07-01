@@ -1,5 +1,5 @@
 import json
-from sorts import bubble_sort
+from extras.sorts import bubble_sort
 from pokemoncito import equipo_principal
 
 
